@@ -69,12 +69,7 @@
                                 <a href=""><img src="{{url('assets/images/logo.png')}}" alt="Prestige Research"></a>
                             </div>
                             <p>Welcome to Prestige Research , We have been known for serving our customers with atmost care and dedication. Our motto has been always aligned with "Delivering Quality Services" and "Customer Satisfaction".</p>
-                            <form action="#" id="mc-form" class="mc-form fix">
-                                <div class="subscribe-form">
-                                    <input id="mc-email" type="email" name="email" placeholder="Email for Newsletter">
-                                    <button id="mc-submit" type="submit"><i class="fa fa-send"></i></button>
-                                </div>    
-                            </form>
+                          
                             <!-- mailchimp-alerts Start -->
                             <div class="mailchimp-alerts text-centre fix text-small">
                                 <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
@@ -101,12 +96,16 @@
                         <div class="single-footer-widget">
                             <h3>QUICK LINK</h3>
                             <ul class="footer-list">
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">CASES</a></li>
-                                <li><a href="#">From Blog</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li><a href="{{url('free-trial')}}">Free Trial</a></li>
+                                <li><a href="{{url('blog')}}">Blog</a></li>
+                                <li><a href="{{url('contact')}}">  Ccontact Us  </a></li>
+                                <li><a href="{{url('kyc')}}"> KYC </a></li>
+                                <li><a href="{{url('risk-tolrance')}}">  Risk Tolerance  </a></li>
+                                 @foreach($pageMenu as $val)
+                                <li><a href="{!! url('page/'.str_slug($val->title))!!}"><i class="fa fa-right"></i>{!! ucfirst($val->title)!!}</a>
+                                </li>
+                                 @endforeach
                             </ul>
                         </div>
                     </div>
@@ -115,8 +114,7 @@
                             <h3>CONTACT US</h3>
                             <div class="footer-contact-info">
                                 <img src="{{url('assets/images/f-map.png')}}" alt="">
-                                <span class="block">222, 1st Vijay Nagar, Indore<br>
-                                 Vijay Nagar</span>
+                                <span class="block">{{$company_address}}</span>
                             </div>
                             <div class="footer-contact-info">
                                 <img src="{{url('assets/images/f-phone.png')}}" alt="">
@@ -146,6 +144,42 @@
                 </div>
             </div>
         </footer>
+
+        
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">2 Days Free Trial</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="
+    position: absolute;
+    top: 10px;
+">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"> 
+
+        <div class="banner-right col-md-12 col-sm-12 jw-animate-gen animated fadeInRight" data-gen-offset="90%" data-gen="fadeInRight">
+            <form method="post" action="{{url('freeTrial')}}">
+
+                <input type="text" placeholder="Enter Name" name="name" required="" autofocus="true"> 
+
+                <input type="number" placeholder="Enter 10 Digit Phone Number" name="phone" required="" maxlength="10" size="10" min="999999999">
+
+                <input type="submit" class="submit trai-btn" value="Start My Free Trial Now!">
+
+            </form> 
+
+            </div>
+             
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
         <!-- End of Footer area -->
         
         <!-- All js here -->
@@ -162,8 +196,6 @@
         <script src="{{url('assets/js/main.js')}}"></script>
          <script src="{{url('assets/js/modernizr-2.8.3.min.js')}}"></script>
          
-         <script>
-         
-         </script>
+        
     </body>
 </html>

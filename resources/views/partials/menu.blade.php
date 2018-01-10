@@ -22,13 +22,14 @@
                                 <div class="header-info">
                                     <img src="{{url('assets/images/message.png')}}" alt="">
                                     <div class="header-info-text" style="font-size: 14px">
-                                        <h4 style="font-size: 14px">info@prestigeresearch.com</h4>
+                                        <h4 style="font-size: 14px">info@prestigeresearch.in</h4>
                                         <span>You can mail us</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="quote-btn">
-                                <button>FREE TRIAL</button>
+
+                                <button  data-toggle="modal" data-target="#exampleModal">FREE TRIAL</button>
                             </div>
                         </div>    
                     </div>

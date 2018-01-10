@@ -13,7 +13,7 @@
   <div class="container aboutus">
     <div class="row">
       <div class="col-md-7 wow fadeInLeft animated" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInLeft;">
-       <h2 class="heading heading_space"><span>Welcome </span>to Research Infotech <span class="divider-left"></span></h2>
+       <h2 class="heading heading_space"><span>Welcome </span>to {{$website_title or 'Prestige Research'}} <span class="divider-left"></span></h2>
        <h4 class="bottom25">About Us </h4>
        <p class="bottom25">We use state of art technology for sending SMS to ensure that our recommendation reaches the client instantly so that they have sufficient time to enter the trade and maximize gains and minimize loss. Our research team consists of highly qualified and experienced analysts who use state of art technologies and software's to find the right opportunities in the market with high accuracy. There analytical skill and accuracy level is our biggest strength.</p>
        <p class="bottom25">Excellent services to our clients are our utmost priority. For ensuring this we have dedicated team of Market Expert which take care of clients personally online and by telephonic assistance round the clock.</p>
