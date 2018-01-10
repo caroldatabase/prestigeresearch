@@ -29,7 +29,7 @@
                           <div class="col-xs-8"></div><!-- /.col -->
                           <div class="col-xs-4">
                           <!--   <button type="submit" class="btn btn-primary btn-block btn-flat">{{ Lang::get('admin-lang.sign_in') }}</button> -->
-                              {!! Form::submit(Lang::get('admin-lang.sign_in'), ['class'=>'btn btn-primary btn-block btn-flat', 'id'=>'login', 'value'=>  Lang::get('admin-lang.sign_in') ]) !!}
+                              {!! Form::submit(Lang::get('admin-lang.sign_in'), ['class'=>'btn btn btn-success btn-block btn-flat', 'id'=>'login', 'value'=>  Lang::get('admin-lang.sign_in') ]) !!}
                           </div><!-- /.col -->
                           </div>
                     </form> 
