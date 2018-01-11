@@ -381,7 +381,7 @@ class HomeController extends Controller
     }
     public function lifeAtResearchInfotech(Request $request)
     {
-        $title = "life @Research Infotech";
+        $title = "life @Prestige Research ";
         $tagLine = "We offer the most complete advisory services in the country";
         $gallery = \DB::table('gallery')->get();
       // dd(file_exists(storage_path('gallery/gallery6.jpg')));

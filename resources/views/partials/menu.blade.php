@@ -18,22 +18,19 @@
         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOut">
           <li>
             <a href="{{url('/')}}">Home</a>
-            
           </li>
           <li>
             <a href="{{url('about')}}">About</a>
-            
           </li>
           <li>
             <a href="{{url('services')}}">Services</a>
-            
         </li>
         <li>
             <a href="{{url('payment')}}">Payment</a>
         </li>
         <li><a href="{{url('pricing')}}">Pricing</a></li>
         <li><a href="{{url('free-trial')}}">Free Trial</a></li>
-        <li><a href="{{url('life-at-research-infotech')}}">Life@PR</a></li>
+        <li><a href="{{url('life-at-prestige-research')}}">Life@PR</a></li>
         <li class="dropdown"><a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">More</a>
             <ul class="dropdown-menu animated fadeOut" style="display: none; opacity: 1;">
                 <li><a href="{{url('career')}}">Career</a></li>
