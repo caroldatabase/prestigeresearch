@@ -183,24 +183,22 @@ height:680px;
 
 <!--Header-->
  <!-- Sliding div starts here -->
-			<div id="slider" style="right:-342px;">
-        			<div id="sidebar" onclick="open_panel()"><img src="{{asset('public/assets/images/contact.png')}}"></div>
-        			<div id="header">
-        			<h2 style="font-size: 23px;font-weight: 900;color: #e22004;">Contact Form</h2>
-        			
-        			<input name="dname" type="text" value="Your Name">
-        			<input name="demail" type="text" value="Your Email">
-        			<h4>Query type</h4>
-        			<select>
-        			<option>General Query</option>
-        			<option>General Query</option>
-        			<option>General Query</option>
-        			<option>Others</option>
-        			</select>
-        			<textarea>Message</textarea>
-        			<button style="background: #f39c12;">Send Message</button>
-    			</div>
-			</div>
+			 <div id="slider" style="right:-342px;">
+              <div id="sidebar" onclick="open_panel()"><img src="{{asset('public/assets/images/contact.png')}}"></div>
+              <div id="header">
+                        {!! Form::open(['url' => url('contact'), 'method' => 'post']) !!}
+          
+              <h2 style="font-size: 23px;font-weight: 900;color: #e22004;">Contact Form</h2>
+              
+              <input name="name" type="text" value=""  placeholder="Your Name" required="">
+              <input name="email" type="text" value="" placeholder="Your Email" required="">
+                    <input name="mobile" type="text" value="" placeholder="Your Contact Number" required="">
+              
+              <textarea name="comments">Message</textarea>
+              <button type="submit" style="background: #f39c12;" class="btn">Send Message</button>
+                    {!! Form::close()!!}   
+          </div>
+      </div>
 		<!-- Sliding div ends here -->
 
 <!--Slider-->
@@ -220,7 +218,7 @@ height:680px;
     @else
         <li data-transition="fade">
             <!-- MAIN IMAGE -->
-            <img src="{{ asset('storage/assets/images/news3.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
+            <img src="{{ asset('storage/assets/images/slide2.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
             <!-- LAYER NR. 1 -->
         </li>
     @endif
@@ -288,7 +286,7 @@ News and Technical & Fundamental Analysis
 
 
 <div class="free-trial-section marqu">
-    <p class="marq"><marquee>Investment in stock and commodity market are subject to market risk. Free calls are only for Paper Trade to see our performance. Don't trade on Free Calls. Trade only on Calls received through SMS with proper Target and Stop Loss. Our company is SEBI Registered.Please pay only in company accounts we do not open d-mat & dabba account</marquee></p>
+    <p class="marq"><marquee>Investment in stock and commodity market are subject to market risk. Free calls are only for Paper Trade to see our performance. Don't trade on Free Calls. Trade only on Calls received through SMS with proper Target and Stop Loss.Please pay only in company accounts we do not open d-mat & dabba account</marquee></p>
 </div>
 
 
@@ -586,37 +584,30 @@ I am an intraday trader in Stock Cash and Stock Futures. Earlier I was skeptical
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLabel">2 Days Free Trial</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true" style="
-    position: absolute;
-    top: 10px;
-">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body"> 
-
-        <div class="banner-right col-md-12 col-sm-12 jw-animate-gen animated fadeInRight" data-gen-offset="90%" data-gen="fadeInRight">
-            <form method="post" action="{{url('freeTrial')}}">
-
-                <input type="text" placeholder="Enter Name" name="name" required="" autofocus="true"> 
-
-                <input type="number" placeholder="Enter 10 Digit Phone Number" name="phone" required="" maxlength="10" size="10" min="999999999">
-
-                <input type="submit" class="submit trai-btn" value="Start My Free Trial Now!">
-
-            </form> 
-
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">2 Days Free Trial</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="
+                            position: absolute;
+                            top: 10px;
+                        ">&times;</span>
+                    </button>
             </div>
-             
-        </form>
-      </div>
-      
+            <div class="modal-body"> 
+
+                <div class="banner-right col-md-12 col-sm-12 jw-animate-gen animated fadeInRight" data-gen-offset="90%" data-gen="fadeInRight">
+                    <form method="post" action="{{url('freeTrial')}}">
+                        <input type="text" placeholder="Enter Name" name="name" required="" autofocus="true"> 
+                        <input type="number" placeholder="Enter 10 Digit Phone Number" name="phone" required="" maxlength="10" size="10" min="999999999">
+                        <input type="text" placeholder="Enter service name for trial. Example: Commodity" name="service_name" required="" >
+                        <input type="submit" class="submit trai-btn" value="Start My Free Trial Now!">
+                    </form> 
+                </div> 
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <script>

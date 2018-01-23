@@ -34,7 +34,9 @@
                                          <div class="col-md-2">
                                              <a href="{{ route('contact') }}">   <input type="submit" value="Reset" class="btn btn-default form-control"> </a>
                                         </div>
-                                       
+                                        <div class="col-md-2">
+                                             <a class="btn btn-info" href="{{ url('donwloadContact') }}"> Download All Contacts Data </a>
+                                        </div>
                                         </div>
                                     </div>
                                         
@@ -56,8 +58,7 @@
         <table class="table table-striped table-hover table-bordered" id="contact">
             <thead>
                 <tr>
-                 <th>   Sno </th> 
-                 <th> Title </th>
+                 <th>   Sno </th>
                     <th> Name </th>
                     <th> Email </th> 
                     <th> Phone </th>  
@@ -70,10 +71,9 @@
             @foreach($contacts as $key => $result)
                 <tr>
                  <th> {{++$key}} </th>
-                 <td> {{$result->title }} </td>
-                    <td> {{$result->firstName.' '.$result->lastName}} </td>
+                    <td> {{$result->name}} </td>
                      <td> {{$result->email or 'NA'}} </td>
-                     <td> {{$result->phone}} </td> 
+                     <td> {{$result->mobile or $result->mobile }} </td> 
                      <td> {{$result->comments}} </td> 
                          <td>
                             {!! Carbon\Carbon::parse($result->created_at)->format('Y-m-d'); !!}

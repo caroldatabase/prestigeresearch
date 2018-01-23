@@ -15,48 +15,6 @@ header('Access-Control-Allow-Methods: GET, POST, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With, auth-token');
 header('Access-Control-Allow-Credentials: true');
 
-
-
-Route::get('donwloadFreeTrial',function(){
-
-        $data = \DB::table('free_trials')->select('name','email','phone','city')->get();
-
-        if($data){
-
-           $jsonData = json_encode($data);
-           $data = json_decode($jsonData,true);
-        }else{
-          $data['data'] = "record not found";
-        }
-
-        return Excel::create('freeTrial', function($excel) use ($data) {
-            $excel->sheet('mySheet', function($sheet) use ($data)
-            {
-                $sheet->fromArray($data);
-            });
-        })->download('csv');
-});
-
-Route::get('donwloadContact',function(){
-
-        $data = \DB::table('contacts')->select('name','email','mobile','comments')->get();
-
-        if($data){
-
-           $jsonData = json_encode($data);
-           $data = json_decode($jsonData,true);
-        }else{
-          $data['data'] = "record not found";
-        }
-
-        return Excel::create('contacts', function($excel) use ($data) {
-            $excel->sheet('mySheet', function($sheet) use ($data)
-            {
-                $sheet->fromArray($data);
-            });
-        })->download('csv');
-});
-
 Route::get('/',[
           'as' => 'home',
           'uses'  => 'HomeController@home'
@@ -178,11 +136,6 @@ Route::get('risk-tolrance',[
           'uses'  => 'HomeController@riskTolrance'
         ]);
 
-Route::post('riskTolrance',[
-          'as' => 'riskTolranceForm',
-          'uses'  => 'HomeController@riskTolranceForm'
-        ]);
-
 
 Route::get('discloser',[
           'as' => 'discloser',
@@ -190,27 +143,8 @@ Route::get('discloser',[
         ]);
 
 
-Route::match(['get','post'],'checkout/{name}',[
-          'as' => 'checkout',
-          'uses'  => 'HomeController@checkout'
-        ]);
  
 
-Route::match(['get','post'],'paymentStatus/{name}',[
-          'as' => 'paymentStatus',
-          'uses'  => 'HomeController@paymentStatus'
-        ]);
-
-
-Route::post('paymentStatus/success',[
-          'as' => 'paymentStatus',
-          'uses'  => 'HomeController@paymentStatus'
-        ]);
-
-Route::match(['get','post'],'status/{name}',[
-          'as' => 'paymentStatus',
-          'uses'  => 'HomeController@paymentStatus'
-        ]);
 
 
 Route::group(['middleware' => ['web']], function(){
@@ -283,18 +217,6 @@ Route::get('myaccount/login',[
 Route::get('myaccount',[
           'as' => 'myaccount',
           'uses'  => 'ProductController@myaccount'
-        ]); 
-
-
-
-Route::get('paypal',[
-          'as' => 'paypal',
-          'uses'  => 'HomeController@paypal'
-        ]); 
-
-Route::post('paypal',[
-          'as' => 'paypal',
-          'uses'  => 'HomeController@paypal'
         ]); 
 
  

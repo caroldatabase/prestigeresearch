@@ -3,11 +3,9 @@
 @include('packages::partials.main-header')
 <!-- Left side column. contains the logo and sidebar -->
 @include('packages::partials.main-sidebar')
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper"> 
     @include('packages::partials.breadcrumb')
-
     <!-- Main content -->
     <section class="content">
         <!-- Small boxes (Stat box) -->
@@ -21,7 +19,7 @@
                                     <div class="box-header">
                                         <div class="table-toolbar">
                                         <div class="row">
-                                            <form action="{{route('kyc')}}" method="get" id="filter_data">
+                                            <form action="{{url('admin/riskTolrance')}}" method="get" id="filter_data">
                                              
                                             <div class="col-md-3">
                                                 <input value="{{ (isset($_REQUEST['search']))?$_REQUEST['search']:''}}" placeholder="Search " type="text" name="search" id="search" class="form-control" >
@@ -32,7 +30,7 @@
                                            
                                         </form>
                                          <div class="col-md-2">
-                                             <a href="{{ route('kyc') }}">   <input type="submit" value="Reset" class="btn btn-default form-control"> </a>
+                                             <a href="{{ url('admin/riskTolrance') }}">   <input type="submit" value="Reset" class="btn btn-default form-control"> </a>
                                         </div>
                                        
                                         </div>
@@ -60,47 +58,46 @@
                     <th> Name </th>
                     <th> Email </th> 
                     <th> Phone </th>   
-                    <th> Pan </th> 
+                    <th> Mobile </th> 
                     <th>   </th>
-                    <th>Created date</th> 
-                    <th>Action</th> 
+                    <th>Created date</th>
                 </tr>
             </thead>
             <tbody>
-              @if($kyc->count())
-            @foreach($kyc as $key => $result)
+              @if(count($risktolrance))
+
+            @foreach($risktolrance as $key => $result)
                 <tr>
                  <th> {{++$key}} </th>
                   
-                    <td> {{$result->name}} </td>
+                    <td> {{$result->full_name}} </td>
                      <td> {{$result->email}} </td>
                      <td> {{$result->phone}} </td>  
-                      <td> {{$result->pan}} </td>
-                      <th>  <a href="{{url('admin/kyc?export=pdf&id='.$result->id)}}">Download Kyc</a>  </th>
+                      <td> {{$result->mobile}} </td>
+                      <th>  <a href="{{url('admin/riskTolrance?export=pdf&id='.$result->id)}}">Download RiskTolrance</a>  </th>
                          <td>
                             {!! Carbon\Carbon::parse($result->created_at)->format('d-M-Y'); !!}
                         </td>
                         
-                        <td> 
+<!--                        <td> 
                             
                             {!! Form::open(array('class' => 'form-inline pull-left deletion-form', 'method' => 'DELETE',  'id'=>'deleteForm_'.$result->id, 'route' => array('kyc.destroy', $result->id))) !!}
                             <button class='delbtn btn btn-danger btn-xs' type="submit" name="remove_levels" value="delete" id="{{$result->id}}"><i class="fa fa-fw fa-trash" title="Delete"></i></button>
                             
                              {!! Form::close() !!}
 
-                        </td>
+                        </td>-->
                    
                 </tr>
                @endforeach
-                
-                 @else
+              @else
                <div class="alert-danger alert"> Record not found! </div>
-              @endif 
+              @endif   
             </tbody>
         </table>
        
 
-         <div class="center" align="center">  {!! $kyc->appends(['search' => isset($_GET['search'])?$_GET['search']:''])->render() !!}</div>
+         <div class="center" align="center">  {!! $risktolrance->appends(['search' => isset($_GET['search'])?$_GET['search']:''])->render() !!}</div>
     </div>
                                    
                                 </div>
