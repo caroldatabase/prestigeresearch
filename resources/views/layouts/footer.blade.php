@@ -39,9 +39,9 @@
     <div class="row">
       <div class="col-md-4 col-sm-4 footer_panel bottom25">
         <h3 class="heading bottom25">About Us<span class="divider-left"></span></h3>
-        <a href="index.html" class="footer_logo bottom25">
+        <a href="{{url('/')}}" class="footer_logo bottom25" style="font-size:x-large">
 
-        <img src="{{ asset('storage/assets/images/logo-white.png')}}" alt="Xwin"></a>
+        <img src="{{ asset('storage/images/onlylogo.png')}}"  style="height: 50px; width: 50px; position: relative;top: -10px" alt="Xwin">Prestige Research</a>
         <p>Welcome to Research Infotech, We have been known for serving our customers with atmost care and dedication. Our motto has been always aligned with "Delivering Quality Services" and "Customer Satisfaction".</p>
         <ul class="social_icon top25">
           <li><a href="#." class="facebook"><i class="fa fa-facebook"></i></a></li>
