@@ -6,6 +6,14 @@
         <h1>Home</h1>
         @stop
         @section('content')
+        <!--Loader-->
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/loader.css')}}">
+<div class="loader">
+  <div class="spinner centered" >
+  <img src="{{ asset('storage/images/loading.gif')}}" width="100%">
+</div>
+</div>
+
     @include('partials/menu')
 <style>
 /*side bar */
