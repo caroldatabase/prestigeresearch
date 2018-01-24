@@ -26,11 +26,11 @@
         <div class="pricing three padding-bottom">
             @foreach($pricing as $result)
                 <div class="pricing_item wow fadeInUp" data-wow-delay="400ms">
-                    @if(file_exists(asset('storage/pricing/'.$result->photo)))
+                   <!--  @if(file_exists(asset('storage/pricing/'.$result->photo)))
                     <img src="{{ asset('storage/pricing/'.$result->photo) }}" class="pricing-pic">
                     @else
                     <img src="{{ asset('storage/assets/images/intra-cash.jpg') }}" class="pricing-pic">
-                    @endif 
+                    @endif  -->
                     <h3>{{$result->title}}</h3>
                     <div class="pricing_price"><span class="pricing_currency"></span>Monthly</div>
                     <p class="pricing_sentence">{!! $result->monthly_price !!}  <span class="pay-now"><a href="#">Pay Now</a></span></p>
