@@ -4,7 +4,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<title>Prestige Research</title>
+	<title>Prestige Research | http://prestigeresearch.in | prestigeresearch.in | advisory | share market tips </title>
+	<meta name="description" content="Prestige Research is an ISO 9001-2001 registered one of the leading Stock Advisory Firm in Stock and Commodity Market. Our strong hold in providing the most accurate Tips makes us stand apart from our competitors">
+  	<meta name="keywords" content="prestigeresearch,Prestige,Research,Share market, advisory">
+  	
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/Xwin-icons.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/animate.min.css')}}">
