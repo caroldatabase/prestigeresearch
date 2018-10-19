@@ -13,3 +13,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+RewriteEngine on
+        RewriteCond %{HTTP_HOST} ^www\.prestigeresearch\.in$
+        RewriteRule ^/?$ "http\:\/\/prestigeresearch\.in\/" [R=301,L]
