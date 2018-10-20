@@ -217,19 +217,37 @@ height:680px;
     <!-- SLIDE  --> 
     @if($banner->count())
         @foreach($banner as $key => $value)  
+          @if (file_exists(url('storage/files/banner/'.$value->field_value))) {
             <li data-transition="fade">
             <!-- MAIN IMAGE -->
                 <img src="{!! asset('storage/files/banner/'.$value->field_value) !!}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
             <!-- LAYER NR. 1 -->
             </li>
-        @endforeach
-    @else
-        <li data-transition="fade">
+           @else
+          <li data-transition="fade">
             <!-- MAIN IMAGE -->
-            <img src="{{ asset('storage/assets/images/slide2.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
+            <img src="{{ asset('storage/assets/images/news2.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
             <!-- LAYER NR. 1 -->
         </li>
-    @endif
+         <li data-transition="fade">
+            <!-- MAIN IMAGE -->
+            <img src="{{ asset('storage/assets/images/news1.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
+            <!-- LAYER NR. 1 -->
+        </li>
+        @endif
+        @endforeach
+     @else
+          <li data-transition="fade">
+            <!-- MAIN IMAGE -->
+            <img src="{{ asset('storage/assets/images/slider1.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
+            <!-- LAYER NR. 1 -->
+        </li>
+         <li data-transition="fade">
+            <!-- MAIN IMAGE -->
+            <img src="{{ asset('storage/assets/images/news1.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
+            <!-- LAYER NR. 1 -->
+        </li>
+        @endif
       
     </ul>
   </div><!-- END REVOLUTION SLIDER -->
@@ -445,9 +463,9 @@ News and Technical & Fundamental Analysis
 <div class="tracksheet">
     <div class="row">
         <div class="col-sm-5" style="padding-right: 0px">
-            <img src="{{ asset('public/assets/images/news1.jpg')}}"  style="width: 630px;min-height: 309px" width="630px"> 
+            <img src="{{ asset('public/assets/images/news1.jpg')}}"  style="width: 100%;min-height: 309px" width="630px"> 
         </div>
-        <div class="col-sm-7 track-content" style="height: 421px">
+        <div class="col-sm-7 track-content" style="min-height: 510px;">
             <h3>Tracksheet and Reports</h3>
             <p class="track-para">Commodity Trading, Swing Trading, Future Trading and Option Trading in Stock,
 Commodity & Bullion Market.</p>
